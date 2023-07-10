@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<meta charset="UTF-8">
+<title>회원 정보</title>
+</head>
+<body>
+	<h2>회원 정보</h2>
+	<hr/>
+	<div th:each="memberDto, status:${memberList}">
+	<div>
+		번호: <span th:if="${status.even}" th:text="짝수"></span>
+		<span th:unless="${status.even}" th:text="홀수"></span>
+	</div>
+	<div>
+		회원아이디: <span th:text="${memberDto.id}"></span>
+	</div>
+	<div>
+		회원이름: <span th:text="${memberDto.name}"></span>
+	</div>
+	<div>
+		회원이메일: <span th:text="${memberDto.email}"></span>
+	</div>
+	<div>
+		회원나이: <span th:text="${memberDto.age}"></span>
+	</div>
+	<div th:switch="${memberDto.age}>30">
+		나이초과:
+		<span th:case="true">30초과</span>
+		<span th:case="false">30이하</span>
+	</div>
+	<hr/>
+	</div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<link rel="stylesheet" th:href="@{/css/common.css}"/>
+<meta charset="UTF-8">
+<title>Hello, thymleaf.</title>
+</head>
+<body>
+	<div class="sample" th:text="${text}">안녕하세요.</div>
+	<img th:src="@{/img/google.png}"/>
+</body>
+</html>
